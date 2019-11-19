@@ -7,7 +7,7 @@
             <span>最新活动: {{title}}</span>
         </div>
         <el-table v-loading="listLoading" :data="list" element-loading-text="Loading" border fit highlight-current-row>
-            <el-table-column align="center" label="ID" prop="id" width="90" />
+            <el-table-column align="center" type="index" :index="indexMethod" width="90" />
             <el-table-column align="center" label="项目" prop="item" width="90" />
             <el-table-column align="center" label="姓名" prop="name" width="180" />
             <el-table-column align="center" label="班级" prop="stuClass" width="180" />
@@ -83,6 +83,9 @@
             changeActivity(e) {
                 console.log(e)
                 this.fetchData(e)
+            },
+            indexMethod(index) {
+                return index + 1
             }
         }
     }

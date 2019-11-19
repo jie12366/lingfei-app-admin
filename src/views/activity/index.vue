@@ -31,7 +31,7 @@
                 </el-dialog>
             </el-form-item>
             <el-form-item label="活动内容">
-                <el-input v-model="form.content" type="textarea" />
+                <tinymce-editor :api_key="api_key" v-model="form.content" />
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmit">发布</el-button>
@@ -44,6 +44,7 @@
 <script>
     import axios from 'axios'
     import { parseTime } from '../../utils/index.js'
+    import Editor from '@tinymce/tinymce-vue'
     export default {
         data() {
             return {
@@ -57,7 +58,8 @@
                 dialogImageUrl: '',
                 dialogVisible: false,
                 aid: Number.parseInt(this.$route.query.aid),
-                showImg: false
+                showImg: false,
+                api_key: 'f0jbu1r8vjg2aui3vsrjuv33h36cs54kxl6t3sexxy7dt8gj'
             }
         },
         mounted() {
@@ -65,6 +67,9 @@
               this.showImg = true
               this.getData()
           }
+        },
+        components: {
+          'tinymce-editor': Editor
         },
         methods: {
             getData() {
@@ -96,6 +101,7 @@
                 })
             },
             onSubmit() {
+                console.log(this.form)
                 this.form.date = parseTime(this.form.date, '{y}-{m}-{d}')
                 // 更新活动
                 if (this.aid > 0) {

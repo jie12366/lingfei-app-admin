@@ -1,9 +1,9 @@
 <template>
     <div class="app-container">
         <el-table v-loading="listLoading" :data="list" element-loading-text="Loading" border fit highlight-current-row>
-            <el-table-column align="center" label="ID" prop="id" width="90" />
+            <el-table-column align="center" type="index" :index="indexMethod" width="90" />
             <el-table-column align="center" label="姓名" prop="name" width="180" />
-            <el-table-column align="center" label="性别" prop="id" width="90" />
+            <el-table-column align="center" label="性别" prop="sex" width="90" />
             <el-table-column align="center" label="班级" prop="stuClass" width="180" />
             <el-table-column align="center" label="学号" prop="number" width="200" />
             <el-table-column align="center" label="QQ" prop="qq" width="200" />
@@ -39,6 +39,9 @@
                     this.list = res.data.list
                     this.listLoading = false
                 })
+            },
+            indexMethod(index) {
+                return index + 1
             }
         }
     }

@@ -5,7 +5,7 @@
             <el-table-column align="center" label="名称" prop="title" width="180" />
             <el-table-column align="center" label="时间" prop="date" width="180" />
             <el-table-column align="center" label="地点" prop="zone" width="180" />
-            <el-table-column align="center" label="内容" prop="content" width="500" />
+            <el-table-column align="center" label="内容" prop="content" width="700" />
             <el-table-column fixed="right" label="操作" width="100">
                 <template slot-scope="scope">
                     <el-button type="text" size="small" @click="handleDelete(scope.row)">删除</el-button>

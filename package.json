@@ -17,6 +17,7 @@
   "dependencies": {
     "@pawelgalazka/cli": "^2.0.2",
     "@pawelgalazka/cli-args": "^1.1.3",
+    "@tinymce/tinymce-vue": "^3.0.1",
     "axios": "0.18.1",
     "element-ui": "2.7.2",
     "js-cookie": "2.2.0",

@@ -1,5 +1,5 @@
 # 安装环境
-FROM node:8.11.2
+FROM node:10.16.3
 RUN apt-get update  && apt-get install -y nginx
 # 建立临时工作目录
 WORKDIR /usr/src/app
